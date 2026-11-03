@@ -3,9 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Little Universe | Titan ❤️ Saturn</title>
+<title>Our Little Universe | Titan & Saturn</title>
 
 <style>
+:root {
+  --pink: #ff80bd;
+  --light: #ffd2e9;
+  --glow: #ff299b;
+  --bg: #050307;
+  --panel: #160a13;
+  --accent: #a83b76;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,31 +24,56 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  color: #fff;
-  font-family: Georgia, serif;
+  color: white;
   text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 35%, #321025 0%, #140812 38%, #050505 78%, #000 100%);
+  font-family: Georgia, serif;
+  background: radial-gradient(ellipse at 50% 35%, #321025, #050307 78%);
+  transition: background 1s ease;
 }
+
+body.theme-1  { --pink:#ff80bd; --light:#ffd2e9; --glow:#ff299b; --bg:#050307; --panel:#160a13; --accent:#a83b76; }
+body.theme-2  { --pink:#e99abf; --light:#ffe0ed; --glow:#d83d83; --bg:#090509; --panel:#1b1017; --accent:#a44c78; }
+body.theme-3  { --pink:#ff91dc; --light:#ffd7f4; --glow:#e94bcb; --bg:#080314; --panel:#180b26; --accent:#a64d9b; }
+body.theme-4  { --pink:#f4a1d0; --light:#ffe3f1; --glow:#c64d9c; --bg:#03030b; --panel:#101020; --accent:#86518e; }
+body.theme-5  { --pink:#ffb2d5; --light:#ffe2ee; --glow:#ff5b9f; --bg:#10050b; --panel:#24101b; --accent:#a64a72; }
+body.theme-6  { --pink:#ff6fae; --light:#ffc3df; --glow:#fa287d; --bg:#090308; --panel:#190b13; --accent:#9f285a; }
+body.theme-7  { --pink:#f5a5d1; --light:#ffe5f4; --glow:#f36bc4; --bg:#080610; --panel:#171023; --accent:#a15e9c; }
+body.theme-8  { --pink:#ff9bc9; --light:#ffe1ed; --glow:#ff4eaa; --bg:#09040b; --panel:#1d0c19; --accent:#aa477e; }
+body.theme-9  { --pink:#d995bb; --light:#f8d8e9; --glow:#bd5b92; --bg:#06050a; --panel:#17121b; --accent:#895075; }
+body.theme-10 { --pink:#ffb3df; --light:#ffe7f5; --glow:#f45cb9; --bg:#0c0610; --panel:#211128; --accent:#a6509a; }
+body.theme-11 { --pink:#ff82c6; --light:#ffd5ec; --glow:#fa399e; --bg:#090309; --panel:#1b0a15; --accent:#a6326c; }
+body.theme-12 { --pink:#e9a5d6; --light:#ffe5f5; --glow:#d96cc5; --bg:#06040b; --panel:#181020; --accent:#97558e; }
+body.theme-13 { --pink:#ff9fb4; --light:#ffe0e5; --glow:#f64c83; --bg:#0a0407; --panel:#1c0b12; --accent:#a64461; }
+body.theme-14 { --pink:#f3a0ca; --light:#ffe3ef; --glow:#e34e9e; --bg:#08050a; --panel:#1c101a; --accent:#a14e78; }
+body.theme-15 { --pink:#ffacd7; --light:#ffe8f4; --glow:#ff5bb2; --bg:#07030a; --panel:#1d0c1b; --accent:#a84488; }
+body.theme-16 { --pink:#db9ec5; --light:#f9e1f0; --glow:#c45b9b; --bg:#07060a; --panel:#17121d; --accent:#875276; }
+body.theme-17 { --pink:#ff85d0; --light:#ffd8f2; --glow:#ef36bd; --bg:#08030c; --panel:#1c0c23; --accent:#984a9e; }
+body.theme-18 { --pink:#f8abc9; --light:#ffe8ef; --glow:#ed669d; --bg:#0a0408; --panel:#1e1018; --accent:#a25071; }
+body.theme-19 { --pink:#ffa0da; --light:#ffe3f5; --glow:#ff4fbb; --bg:#08030b; --panel:#1c0a1c; --accent:#a33e8d; }
+body.theme-20 { --pink:#e9a4c5; --light:#ffe2ed; --glow:#d85b99; --bg:#070509; --panel:#1b111a; --accent:#985070; }
+body.theme-21 { --pink:#ff9cc5; --light:#ffe1ed; --glow:#ff408e; --bg:#09040a; --panel:#1b0b15; --accent:#a43e6d; }
+body.theme-22 { --pink:#f6b1e0; --light:#ffe9f8; --glow:#e86cc6; --bg:#07040c; --panel:#1b1024; --accent:#99538f; }
+body.theme-23 { --pink:#ff8bbf; --light:#ffd6e9; --glow:#f63e95; --bg:#080307; --panel:#1c0a13; --accent:#a33d66; }
+body.theme-24 { --pink:#eaa2d2; --light:#ffe5f5; --glow:#db56b7; --bg:#07040b; --panel:#191020; --accent:#95528e; }
+body.theme-25 { --pink:#ffb7df; --light:#ffebf6; --glow:#ff65b8; --bg:#08040a; --panel:#1d0d19; --accent:#a54d81; }
 
 .stars {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .75;
+  opacity: .8;
   background-image:
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(2px 2px at 90px 80px, #ff8acb, transparent),
-    radial-gradient(1px 1px at 160px 150px, #fff, transparent),
-    radial-gradient(2px 2px at 230px 40px, #ffb6df, transparent),
-    radial-gradient(1px 1px at 300px 190px, #fff, transparent),
-    radial-gradient(2px 2px at 350px 90px, #ff65b5, transparent);
-  background-size: 370px 250px;
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 90px 80px, var(--pink), transparent),
+    radial-gradient(1px 1px at 160px 150px, white, transparent),
+    radial-gradient(2px 2px at 230px 40px, var(--light), transparent),
+    radial-gradient(1px 1px at 300px 190px, white, transparent);
+  background-size: 350px 250px;
   animation: twinkle 4s infinite alternate;
 }
 
 @keyframes twinkle {
-  from { opacity: .35; }
+  from { opacity: .3; }
   to { opacity: .9; }
 }
 
@@ -47,170 +81,145 @@ body {
   position: relative;
   z-index: 1;
   width: 90%;
-  max-width: 720px;
+  max-width: 750px;
   margin: auto;
-  padding: 55px 0 30px;
+  padding: 50px 0 30px;
 }
 
 h1 {
   font-size: clamp(32px, 7vw, 52px);
-  color: #ff9ed2;
-  margin-bottom: 14px;
-  text-shadow: 0 0 12px #ff3b9d, 0 0 30px #a60058;
+  color: var(--pink);
+  text-shadow: 0 0 15px var(--glow);
+  margin-bottom: 15px;
+  transition: color 1s;
 }
 
+h2 {
+  color: var(--pink);
+  margin-bottom: 18px;
+  text-shadow: 0 0 12px var(--glow);
+}
+
+p { line-height: 1.8; }
+
 .subtitle {
-  color: #e9c6dc;
-  font-size: 17px;
-  line-height: 1.8;
+  color: var(--light);
+  font-size: 16px;
 }
 
 .planet {
-  width: 145px;
-  height: 145px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   margin: 55px auto 40px;
   position: relative;
-  background:
-    linear-gradient(140deg, #ffd1e9 0%, #ff80bd 28%, #b72d73 65%, #29101f 100%);
-  box-shadow: 0 0 30px #ff4ca8, 0 0 70px rgba(255, 50, 150, .35);
+  background: linear-gradient(140deg,#ffe0ee,var(--pink),#9c2865,#190815);
+  box-shadow: 0 0 35px var(--glow), 0 0 75px var(--glow);
   animation: float 5s ease-in-out infinite;
 }
 
 .planet::before {
   content: "";
   position: absolute;
-  width: 225px;
-  height: 58px;
-  border: 8px solid #ffb3dc;
-  border-left-color: #8f315f;
-  border-right-color: #ffd5ed;
+  width: 220px;
+  height: 55px;
+  border: 8px solid var(--light);
+  border-left-color: #8e315e;
+  border-right-color: white;
   border-radius: 50%;
   top: 40px;
   left: -48px;
   transform: rotate(-20deg);
-  box-shadow: 0 0 15px rgba(255, 117, 190, .5);
-}
-
-.planet::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(120deg, transparent 40%, rgba(0,0,0,.55));
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
 
 .section {
-  margin: 45px auto;
+  margin: 40px auto;
   padding: 28px 18px;
-  border: 1px solid rgba(255, 105, 180, .35);
+  border: 1px solid var(--accent);
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(35, 12, 27, .9), rgba(5, 5, 5, .92));
-  box-shadow: 0 0 25px rgba(255, 40, 145, .10);
-}
-
-.section h2 {
-  color: #ff9ed2;
-  margin-bottom: 18px;
-  font-size: 25px;
-  text-shadow: 0 0 12px rgba(255, 70, 160, .5);
+  background: var(--panel);
+  box-shadow: 0 0 25px rgba(255,50,150,.15);
+  transition: background 1s, border 1s;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 22px;
 }
 
 .time-box {
-  min-width: 75px;
-  padding: 15px 10px;
+  min-width: 72px;
+  padding: 14px 8px;
+  border: 1px solid var(--accent);
   border-radius: 12px;
-  background: #10070d;
-  border: 1px solid #a83b76;
-  box-shadow: 0 0 13px rgba(255, 50, 150, .15);
+  background: #090509;
 }
 
 .time-box span {
   display: block;
-  font-size: 28px;
-  color: #ff8ac8;
-  text-shadow: 0 0 12px #ff3b9d;
+  color: var(--pink);
+  font-size: 27px;
+  text-shadow: 0 0 12px var(--glow);
 }
 
-.time-box small {
-  color: #e8c2d8;
-}
+.time-box small { color: var(--light); }
 
 button {
-  border: 1px solid #ff9ed2;
+  border: 1px solid var(--pink);
   border-radius: 30px;
-  padding: 13px 27px;
+  padding: 13px 25px;
   margin-top: 20px;
-  color: #170711;
-  background: linear-gradient(135deg, #ffb6dc, #f044a0);
+  color: #180711;
+  background: linear-gradient(135deg,var(--light),var(--pink));
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 18px rgba(255, 80, 165, .35);
+  box-shadow: 0 0 18px var(--glow);
   transition: .3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 28px #ff5eae;
+button:hover { transform: scale(1.05); }
+
+.letter {
+  display: none;
+  margin-top: 25px;
+  padding: 25px 20px;
+  text-align: left;
+  border-radius: 15px;
+  border: 1px solid var(--accent);
+  background: #08050a;
+  line-height: 1.9;
+  color: #f9e5f1;
+}
+
+.letter h2 { text-align: center; }
+.letter p { margin-bottom: 17px; }
+
+.letter h3 {
+  text-align: center;
+  color: var(--pink);
+  margin: 25px 0;
 }
 
 #birthdayMessage {
   display: none;
-  color: #ffadd8;
-  font-size: 25px;
+  color: var(--pink);
+  font-size: 27px;
   margin-top: 25px;
-  text-shadow: 0 0 18px #ff3b9d;
-  animation: twinkle 2s infinite alternate;
-}
-
-.letter {
-  display: none;
-  text-align: left;
-  margin-top: 25px;
-  padding: 25px 20px;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #1c0b16, #080608);
-  border: 1px solid #d94b97;
-  box-shadow: inset 0 0 20px rgba(255, 50, 145, .08);
-  line-height: 1.9;
-  color: #f8e7f1;
-}
-
-.letter h2 {
-  text-align: center;
-  color: #ff9ed2;
-  margin-bottom: 22px;
-}
-
-.letter p {
-  margin-bottom: 17px;
-}
-
-.letter h3 {
-  text-align: center;
-  color: #ff9ed2;
-  margin: 25px 0;
-  text-shadow: 0 0 12px #ff3b9d;
+  text-shadow: 0 0 18px var(--glow);
 }
 
 footer {
-  margin-top: 50px;
+  color: var(--light);
+  margin-top: 45px;
   padding-bottom: 25px;
-  color: #c99bb5;
   font-size: 14px;
   line-height: 1.8;
 }
@@ -218,136 +227,167 @@ footer {
 </head>
 
 <body>
-
 <div class="stars"></div>
 
 <main class="container">
 
-  <h1>Our Little Universe 🪐</h1>
+<h1>Our Little Universe 🪐</h1>
 
-  <p class="subtitle">
-    A little universe made with love,<br>
-    especially for my Saturn. ❤️
-  </p>
+<p class="subtitle" id="intro">
+A little universe made with love,<br>
+especially for my Saturn. ❤️
+</p>
 
-  <div class="planet"></div>
+<div class="planet"></div>
 
-  <p class="subtitle">
-    Somewhere in this endless universe,<br>
-    my favourite person is you.
-  </p>
+<p class="subtitle" id="message">
+Somewhere in this endless universe,<br>
+my favourite person is you.
+</p>
 
-  <section class="section">
-    <h2>Until Your Special Day ✨</h2>
+<section class="section">
+<h2>Until Your Special Day ✨</h2>
+<p class="subtitle">A little countdown for someone very special.</p>
 
-    <p class="subtitle">
-      A little countdown for someone very special.
-    </p>
+<div class="countdown">
+  <div class="time-box"><span id="days">00</span><small>Days</small></div>
+  <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+  <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+  <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
+</div>
 
-    <div class="countdown">
-      <div class="time-box">
-        <span id="days">00</span>
-        <small>Days</small>
-      </div>
+<div id="birthdayMessage">It's Your Day, My Saturn! 🎂💗</div>
+</section>
 
-      <div class="time-box">
-        <span id="hours">00</span>
-        <small>Hours</small>
-      </div>
+<section class="section">
+<h2>A Little Letter For You 💌</h2>
+<p class="subtitle">There's something I want you to read...</p>
 
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <small>Minutes</small>
-      </div>
+<button onclick="toggleLetter()" id="letterButton">
+Open Your Letter 💗
+</button>
 
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <small>Seconds</small>
-      </div>
-    </div>
+<div class="letter" id="letter">
+<h2>You're My Universe 🌌</h2>
 
-    <div id="birthdayMessage">
-      It's Your Day, My Saturn! 🎂💗
-    </div>
-  </section>
+<p>My dearest Saturn, ❤️</p>
 
-  <section class="section">
-    <h2>A Little Letter For You 💌</h2>
+<p>
+You are not just a part of my life.
+You're my universe, my favourite person,
+and my most beautiful feeling.
+</p>
 
-    <p class="subtitle">
-      There's something I want you to read...
-    </p>
+<p>
+Just like the stars shine in the endless sky,
+you bring light into my little world.
+No matter how far apart we are,
+you'll always have a special place in my heart.
+</p>
 
-    <button onclick="toggleLetter()" id="letterButton">
-      Open Your Letter 💗
-    </button>
+<p>
+I wish I could be beside you on your special day,
+hold your hand, see your smile,
+and make beautiful memories together.
+</p>
 
-    <div class="letter" id="letter">
+<p>
+Until that day comes, remember that
+someone is always thinking of you,
+loving you, and wishing the best for you.
+</p>
 
-      <h2>You're My Universe 🌌</h2>
+<p>
+I hope your new year of life brings you
+endless happiness, beautiful moments,
+and everything your heart wishes for.
+You deserve all the love in this universe.
+</p>
 
-      <p>My dearest Saturn, ❤️</p>
+<h3>Advance Happy Birthday, My Saturn! 🎂💗</h3>
 
-      <p>
-        You are not just a part of my life.
-        You're my universe, my favourite person,
-        and my most beautiful feeling.
-      </p>
+<p>
+With all my love,<br>
+Your Titan 🪐
+</p>
+</div>
+</section>
 
-      <p>
-        Just like the stars shine in the endless sky,
-        you bring light into my little world.
-        No matter how far apart we are,
-        you'll always have a special place in my heart.
-      </p>
-
-      <p>
-        I wish I could be beside you on your special day,
-        hold your hand, see your smile,
-        and make beautiful memories together.
-      </p>
-
-      <p>
-        Until that day comes, remember that
-        someone is always thinking of you,
-        loving you, and wishing the best for you.
-      </p>
-
-      <p>
-        I hope your new year of life brings you
-        endless happiness, beautiful moments,
-        and everything your heart wishes for.
-        You deserve all the love in this universe.
-      </p>
-
-      <h3>Advance Happy Birthday, My Saturn! 🎂💗</h3>
-
-      <p>
-        With all my love,<br>
-        Your Titan 🪐
-      </p>
-
-    </div>
-  </section>
-
-  <footer>
-    Made with endless love by Titan ❤️<br>
-    In our little universe, it's always you and me.
-  </footer>
+<footer>
+Made with endless love by Titan ❤️<br>
+In our little universe, it's always you and me.
+</footer>
 
 </main>
 
 <script>
+/* 25 rotating themes and messages */
+
+const experiences = [
+["Pink Galaxy","You are my favourite part of this universe."],
+["Black Rose","Somewhere between all the stars, I found you."],
+["Pink Nebula","My universe feels complete because of you."],
+["Midnight Universe","Even the darkest night feels beautiful when I think of you."],
+["Rose Stardust","You make ordinary moments feel magical."],
+["Dark Romance","My heart has its own way of finding you."],
+["Pink Moonlight","If I could choose again, I'd still choose you."],
+["Cosmic Love","You are my favourite hello and my sweetest thought."],
+["Velvet Galaxy","The universe is huge, but my world begins with you."],
+["Saturn's Dream","I hope all your dreams find their way to you."],
+["Starlight Love","Your smile is one of my favourite sights."],
+["Midnight Rose","I wish I could pause time during our happiest moments."],
+["Pink Stardust","You are a beautiful part of my every day."],
+["Moonlit Hearts","Distance cannot make you less important to me."],
+["Eternal Pink","I want to keep making memories with you."],
+["Dark Nebula","Even silence feels comfortable when it is with you."],
+["Cosmic Hearts","You are the sweetest chapter of my story."],
+["Rose Moon","I hope life always gives you reasons to smile."],
+["Stellar Romance","If the stars could speak, they'd tell you how loved you are."],
+["Black Velvet","You make my little world feel brighter."],
+["Pink Horizon","I look forward to all the beautiful days ahead."],
+["Dream Galaxy","I wish for a thousand more moments with you."],
+["Saturn's Light","You are rare, precious and irreplaceable to me."],
+["Forever Universe","No matter where life takes us, you will be special."],
+["Our Little Universe","My favourite universe will always be the one with you."]
+];
+
+function chooseExperience() {
+  let visit = Number(localStorage.getItem("titanSaturnVisit") || 0);
+  let last = Number(localStorage.getItem("titanSaturnLast") || 0);
+
+  let next = visit % experiences.length;
+
+  if (experiences.length > 1 && next === last) {
+    next = (next + 1) % experiences.length;
+  }
+
+  localStorage.setItem("titanSaturnVisit", visit + 1);
+  localStorage.setItem("titanSaturnLast", next);
+
+  return next;
+}
+
+const selected = chooseExperience();
+const experience = experiences[selected];
+
+document.body.classList.add("theme-" + (selected + 1));
+
+document.getElementById("intro").innerHTML =
+  "Welcome to <b>" + experience[0] +
+  "</b>, my Saturn. 💗<br>A little universe made just for you.";
+
+document.getElementById("message").textContent =
+  experience[1];
+
+
+/* Birthday countdown: November 14, 2026 */
+
 function updateCountdown() {
   const now = new Date();
-  const year = now.getFullYear();
+  const birthday = new Date(2026, 10, 14, 0, 0, 0);
+  const difference = birthday - now;
 
-  let birthday = new Date(year, 10, 14, 0, 0, 0);
-
-  const isBirthday =
-    now.getMonth() === 10 && now.getDate() === 14;
-
-  if (isBirthday) {
+  if (difference <= 0) {
     document.getElementById("days").textContent = "00";
     document.getElementById("hours").textContent = "00";
     document.getElementById("minutes").textContent = "00";
@@ -356,21 +396,17 @@ function updateCountdown() {
     return;
   }
 
-  if (now > birthday) {
-    birthday = new Date(year + 1, 10, 14, 0, 0, 0);
-  }
+  document.getElementById("days").textContent =
+    Math.floor(difference / 86400000);
 
-  const difference = birthday - now;
+  document.getElementById("hours").textContent =
+    Math.floor((difference / 3600000) % 24);
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
+  document.getElementById("minutes").textContent =
+    Math.floor((difference / 60000) % 60);
 
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  document.getElementById("seconds").textContent =
+    Math.floor((difference / 1000) % 60);
 }
 
 function toggleLetter() {
