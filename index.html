@@ -3,428 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Little Universe | Titan & Saturn</title>
-
+<meta name="theme-color" content="#100b16">
+<title>Our Little Universe ♡</title>
 <style>
-:root {
-  --pink: #ff80bd;
-  --light: #ffd2e9;
-  --glow: #ff299b;
-  --bg: #050307;
-  --panel: #160a13;
-  --accent: #a83b76;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-  color: white;
-  text-align: center;
-  font-family: Georgia, serif;
-  background: radial-gradient(ellipse at 50% 35%, #321025, #050307 78%);
-  transition: background 1s ease;
-}
-
-body.theme-1  { --pink:#ff80bd; --light:#ffd2e9; --glow:#ff299b; --bg:#050307; --panel:#160a13; --accent:#a83b76; }
-body.theme-2  { --pink:#e99abf; --light:#ffe0ed; --glow:#d83d83; --bg:#090509; --panel:#1b1017; --accent:#a44c78; }
-body.theme-3  { --pink:#ff91dc; --light:#ffd7f4; --glow:#e94bcb; --bg:#080314; --panel:#180b26; --accent:#a64d9b; }
-body.theme-4  { --pink:#f4a1d0; --light:#ffe3f1; --glow:#c64d9c; --bg:#03030b; --panel:#101020; --accent:#86518e; }
-body.theme-5  { --pink:#ffb2d5; --light:#ffe2ee; --glow:#ff5b9f; --bg:#10050b; --panel:#24101b; --accent:#a64a72; }
-body.theme-6  { --pink:#ff6fae; --light:#ffc3df; --glow:#fa287d; --bg:#090308; --panel:#190b13; --accent:#9f285a; }
-body.theme-7  { --pink:#f5a5d1; --light:#ffe5f4; --glow:#f36bc4; --bg:#080610; --panel:#171023; --accent:#a15e9c; }
-body.theme-8  { --pink:#ff9bc9; --light:#ffe1ed; --glow:#ff4eaa; --bg:#09040b; --panel:#1d0c19; --accent:#aa477e; }
-body.theme-9  { --pink:#d995bb; --light:#f8d8e9; --glow:#bd5b92; --bg:#06050a; --panel:#17121b; --accent:#895075; }
-body.theme-10 { --pink:#ffb3df; --light:#ffe7f5; --glow:#f45cb9; --bg:#0c0610; --panel:#211128; --accent:#a6509a; }
-body.theme-11 { --pink:#ff82c6; --light:#ffd5ec; --glow:#fa399e; --bg:#090309; --panel:#1b0a15; --accent:#a6326c; }
-body.theme-12 { --pink:#e9a5d6; --light:#ffe5f5; --glow:#d96cc5; --bg:#06040b; --panel:#181020; --accent:#97558e; }
-body.theme-13 { --pink:#ff9fb4; --light:#ffe0e5; --glow:#f64c83; --bg:#0a0407; --panel:#1c0b12; --accent:#a64461; }
-body.theme-14 { --pink:#f3a0ca; --light:#ffe3ef; --glow:#e34e9e; --bg:#08050a; --panel:#1c101a; --accent:#a14e78; }
-body.theme-15 { --pink:#ffacd7; --light:#ffe8f4; --glow:#ff5bb2; --bg:#07030a; --panel:#1d0c1b; --accent:#a84488; }
-body.theme-16 { --pink:#db9ec5; --light:#f9e1f0; --glow:#c45b9b; --bg:#07060a; --panel:#17121d; --accent:#875276; }
-body.theme-17 { --pink:#ff85d0; --light:#ffd8f2; --glow:#ef36bd; --bg:#08030c; --panel:#1c0c23; --accent:#984a9e; }
-body.theme-18 { --pink:#f8abc9; --light:#ffe8ef; --glow:#ed669d; --bg:#0a0408; --panel:#1e1018; --accent:#a25071; }
-body.theme-19 { --pink:#ffa0da; --light:#ffe3f5; --glow:#ff4fbb; --bg:#08030b; --panel:#1c0a1c; --accent:#a33e8d; }
-body.theme-20 { --pink:#e9a4c5; --light:#ffe2ed; --glow:#d85b99; --bg:#070509; --panel:#1b111a; --accent:#985070; }
-body.theme-21 { --pink:#ff9cc5; --light:#ffe1ed; --glow:#ff408e; --bg:#09040a; --panel:#1b0b15; --accent:#a43e6d; }
-body.theme-22 { --pink:#f6b1e0; --light:#ffe9f8; --glow:#e86cc6; --bg:#07040c; --panel:#1b1024; --accent:#99538f; }
-body.theme-23 { --pink:#ff8bbf; --light:#ffd6e9; --glow:#f63e95; --bg:#080307; --panel:#1c0a13; --accent:#a33d66; }
-body.theme-24 { --pink:#eaa2d2; --light:#ffe5f5; --glow:#db56b7; --bg:#07040b; --panel:#191020; --accent:#95528e; }
-body.theme-25 { --pink:#ffb7df; --light:#ffebf6; --glow:#ff65b8; --bg:#08040a; --panel:#1d0d19; --accent:#a54d81; }
-
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .8;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, white, transparent),
-    radial-gradient(2px 2px at 90px 80px, var(--pink), transparent),
-    radial-gradient(1px 1px at 160px 150px, white, transparent),
-    radial-gradient(2px 2px at 230px 40px, var(--light), transparent),
-    radial-gradient(1px 1px at 300px 190px, white, transparent);
-  background-size: 350px 250px;
-  animation: twinkle 4s infinite alternate;
-}
-
-@keyframes twinkle {
-  from { opacity: .3; }
-  to { opacity: .9; }
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  width: 90%;
-  max-width: 750px;
-  margin: auto;
-  padding: 50px 0 30px;
-}
-
-h1 {
-  font-size: clamp(32px, 7vw, 52px);
-  color: var(--pink);
-  text-shadow: 0 0 15px var(--glow);
-  margin-bottom: 15px;
-  transition: color 1s;
-}
-
-h2 {
-  color: var(--pink);
-  margin-bottom: 18px;
-  text-shadow: 0 0 12px var(--glow);
-}
-
-p { line-height: 1.8; }
-
-.subtitle {
-  color: var(--light);
-  font-size: 16px;
-}
-
-.planet {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  margin: 55px auto 40px;
-  position: relative;
-  background: linear-gradient(140deg,#ffe0ee,var(--pink),#9c2865,#190815);
-  box-shadow: 0 0 35px var(--glow), 0 0 75px var(--glow);
-  animation: float 5s ease-in-out infinite;
-}
-
-.planet::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 55px;
-  border: 8px solid var(--light);
-  border-left-color: #8e315e;
-  border-right-color: white;
-  border-radius: 50%;
-  top: 40px;
-  left: -48px;
-  transform: rotate(-20deg);
-}
-
-@keyframes float {
-  50% { transform: translateY(-12px); }
-}
-
-.section {
-  margin: 40px auto;
-  padding: 28px 18px;
-  border: 1px solid var(--accent);
-  border-radius: 20px;
-  background: var(--panel);
-  box-shadow: 0 0 25px rgba(255,50,150,.15);
-  transition: background 1s, border 1s;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-.time-box {
-  min-width: 72px;
-  padding: 14px 8px;
-  border: 1px solid var(--accent);
-  border-radius: 12px;
-  background: #090509;
-}
-
-.time-box span {
-  display: block;
-  color: var(--pink);
-  font-size: 27px;
-  text-shadow: 0 0 12px var(--glow);
-}
-
-.time-box small { color: var(--light); }
-
-button {
-  border: 1px solid var(--pink);
-  border-radius: 30px;
-  padding: 13px 25px;
-  margin-top: 20px;
-  color: #180711;
-  background: linear-gradient(135deg,var(--light),var(--pink));
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 18px var(--glow);
-  transition: .3s;
-}
-
-button:hover { transform: scale(1.05); }
-
-.letter {
-  display: none;
-  margin-top: 25px;
-  padding: 25px 20px;
-  text-align: left;
-  border-radius: 15px;
-  border: 1px solid var(--accent);
-  background: #08050a;
-  line-height: 1.9;
-  color: #f9e5f1;
-}
-
-.letter h2 { text-align: center; }
-.letter p { margin-bottom: 17px; }
-
-.letter h3 {
-  text-align: center;
-  color: var(--pink);
-  margin: 25px 0;
-}
-
-#birthdayMessage {
-  display: none;
-  color: var(--pink);
-  font-size: 27px;
-  margin-top: 25px;
-  text-shadow: 0 0 18px var(--glow);
-}
-
-footer {
-  color: var(--light);
-  margin-top: 45px;
-  padding-bottom: 25px;
-  font-size: 14px;
-  line-height: 1.8;
-}
+:root{--bg:#100b16;--panel:#1b1221;--pink:#f2a9cb;--rose:#d86eaa;--soft:#f8dce9;--muted:#c9b4c5;--gold:#d9c18b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#38203b 0,#170f20 42%,#0c0911 100%);color:#fff1f8;font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.38;background-image:radial-gradient(1px 1px at 10% 20%,#fff 99%,transparent),radial-gradient(1px 1px at 80% 12%,#f8cce1 99%,transparent),radial-gradient(2px 2px at 40% 70%,#fff 99%,transparent),radial-gradient(1px 1px at 90% 80%,#fff 99%,transparent),radial-gradient(1px 1px at 25% 90%,#f5b8d4 99%,transparent);background-size:220px 220px;z-index:-1}
+a{color:var(--pink)}button{font:inherit}.wrap{width:min(100% - 30px,980px);margin:auto}.topline{text-align:center;padding:24px 0 8px;color:var(--pink);letter-spacing:4px;font-size:11px;text-transform:uppercase}
+.hero{text-align:center;padding:32px 0 55px}.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}.hero h1{font-size:clamp(38px,8vw,76px);font-weight:normal;line-height:1.02;margin:14px 0;color:#ffe5f0;text-shadow:0 0 28px #d86eaa66}.hero .sub{color:var(--muted);font-style:italic;font-size:18px}
+.main-photo{width:min(82%,430px);max-height:560px;object-fit:cover;border:7px solid #f7e8ed;outline:1px solid var(--gold);box-shadow:0 18px 65px #0009,0 0 35px #d86eaa33;border-radius:4px;cursor:zoom-in;margin:22px auto 18px;display:block}
+.pill{display:inline-block;border:1px solid #b96b98;border-radius:99px;padding:10px 18px;color:var(--soft);font-size:12px;letter-spacing:2px}
+h2{font-weight:normal;text-align:center;font-size:clamp(27px,5vw,40px);color:var(--pink);margin:0 0 8px}.section{padding:42px 0}.intro{text-align:center;color:var(--muted);line-height:1.7;max-width:650px;margin:0 auto 24px}
+.countbox{background:linear-gradient(145deg,#25162b,#130e1b);border:1px solid #865071;border-radius:18px;padding:24px 15px;text-align:center;box-shadow:0 15px 45px #0005}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px 0}.time{min-width:68px;padding:12px 9px;background:#100b16;border:1px solid #5c3854;border-radius:12px}.time strong{display:block;font-size:30px;color:#ffd5e8;font-weight:normal}.time span{font:10px Arial;letter-spacing:2px;color:var(--muted)}
+.btn{border:1px solid var(--pink);background:linear-gradient(120deg,#a94f83,#6d315f);color:white;border-radius:99px;padding:12px 22px;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #d86eaa44}.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}.polaroid{background:#f7edf1;color:#392638;padding:9px 9px 17px;transform:rotate(var(--r));box-shadow:0 9px 25px #0008;cursor:zoom-in;transition:.25s}.polaroid:hover{transform:rotate(0) scale(1.035)}.polaroid img{width:100%;height:190px;object-fit:cover;display:block}.polaroid p{text-align:center;margin:12px 0 0;font-size:14px;font-style:italic}
+.letter-card,.surprise{background:linear-gradient(145deg,#24162b,#140e1b);border:1px solid #69415e;border-radius:18px;padding:23px;margin:16px 0;box-shadow:0 12px 32px #0005}.letter-card h3,.surprise h3{color:#ffd5e8;font-weight:normal;text-align:center;font-size:23px}.letter{white-space:pre-line;line-height:1.9;color:#f4dce8;font-size:16px}.signature{text-align:right;color:var(--pink);font-style:italic;margin-top:20px}
+.envelope{display:block;margin:16px auto 0;background:#321b31;border:1px solid var(--gold);padding:15px 24px;color:#ffe5f0;border-radius:10px;cursor:pointer;width:min(100%,380px)}.hidden-letter{display:none;margin-top:20px}.hidden-letter.open{display:block}
+.lock{font-size:28px;text-align:center}.reason{font-size:17px;line-height:1.7;text-align:center;color:#f7dce9;padding:18px}
+footer{text-align:center;padding:45px 15px 65px;color:#c9a9bf;font-style:italic}.modal{display:none;position:fixed;inset:0;background:#08050beF;z-index:10;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal img{max-width:95vw;max-height:88vh;object-fit:contain;border:5px solid #f7e8ed}.modal button{position:absolute;top:18px;right:20px;background:#43233e;color:white;border:1px solid var(--pink);border-radius:50%;width:42px;height:42px;font-size:22px}
+.small{font-size:12px;color:#bda5b7}.divider{width:70px;height:1px;background:var(--gold);margin:18px auto}
+@media(max-width:520px){.hero{padding-top:20px}.main-photo{width:92%}.section{padding:30px 0}.letter{font-size:15px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.polaroid img{height:160px}}
 </style>
 </head>
-
 <body>
-<div class="stars"></div>
-
-<main class="container">
-
-<h1>Our Little Universe 🪐</h1>
-
-<p class="subtitle" id="intro">
-A little universe made with love,<br>
-especially for my Saturn. ❤️
-</p>
-
-<div class="planet"></div>
-
-<p class="subtitle" id="message">
-Somewhere in this endless universe,<br>
-my favourite person is you.
-</p>
-
-<section class="section">
-<h2>Until Your Special Day ✨</h2>
-<p class="subtitle">A little countdown for someone very special.</p>
-
-<div class="countdown">
-  <div class="time-box"><span id="days">00</span><small>Days</small></div>
-  <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
-  <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
-  <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
-</div>
-
-<div id="birthdayMessage">It's Your Day, My Saturn! 🎂💗</div>
+<div class="topline">✦ made with love · for saturn · 14 november ✦</div>
+<main class="wrap">
+<section class="hero">
+  <div class="eyebrow">a little universe of our own</div>
+  <h1>Our Little Universe</h1>
+  <div class="sub">For the girl who makes my universe feel like home.</div>
+  <img class="main-photo zoomable" src="images/main-saturn.jpg" alt="Saturn — the birthday girl">
+  <div class="pill">✧ HAPPY BIRTHDAY, AMMA ✧</div>
+  <p class="intro" style="margin-top:20px">Some people are stars. And then there is you — my whole universe.</p>
+  <a class="btn" href="#countdown" style="text-decoration:none;display:inline-block">Explore your universe ↓</a>
 </section>
 
-<section class="section">
-<h2>A Little Letter For You 💌</h2>
-<p class="subtitle">There's something I want you to read...</p>
-
-<button onclick="toggleLetter()" id="letterButton">
-Open Your Letter 💗
-</button>
-
-<div class="letter" id="letter">
-<h2>You're My Universe 🌌</h2>
-
-<p>My dearest Saturn, ❤️</p>
-
-<p>
-You are not just a part of my life.
-You're my universe, my favourite person,
-and my most beautiful feeling.
-</p>
-
-<p>
-Just like the stars shine in the endless sky,
-you bring light into my little world.
-No matter how far apart we are,
-you'll always have a special place in my heart.
-</p>
-
-<p>
-I wish I could be beside you on your special day,
-hold your hand, see your smile,
-and make beautiful memories together.
-</p>
-
-<p>
-Until that day comes, remember that
-someone is always thinking of you,
-loving you, and wishing the best for you.
-</p>
-
-<p>
-I hope your new year of life brings you
-endless happiness, beautiful moments,
-and everything your heart wishes for.
-You deserve all the love in this universe.
-</p>
-
-<h3>Advance Happy Birthday, My Saturn! 🎂💗</h3>
-
-<p>
-With all my love,<br>
-Your Titan 🪐
-</p>
-</div>
+<section class="section" id="countdown">
+  <h2>Until Your Special Day</h2><p class="intro">A little countdown to the day my favourite universe was born.</p>
+  <div class="countbox">
+    <div id="countMessage">Counting down to your birthday…</div>
+    <div class="countdown" id="timer">
+      <div class="time"><strong id="days">--</strong><span>DAYS</span></div>
+      <div class="time"><strong id="hours">--</strong><span>HOURS</span></div>
+      <div class="time"><strong id="minutes">--</strong><span>MINUTES</span></div>
+      <div class="time"><strong id="seconds">--</strong><span>SECONDS</span></div>
+    </div>
+    <div class="small">14 NOVEMBER 2026 · 12:00 AM (BANGLADESH TIME)</div>
+  </div>
 </section>
 
-<footer>
-Made with endless love by Titan ❤️<br>
-In our little universe, it's always you and me.
-</footer>
+<section class="section" id="memories">
+  <h2>Our Little Memories</h2><p class="intro">Little pieces of beauty, collected in one place. Tap any picture to see it closer.</p>
+  <div class="grid" id="gallery"></div>
+</section>
 
+<section class="section" id="letters">
+  <h2>Letters For Amma</h2><p class="intro">Two letters, written with love, waiting inside their little envelopes.</p>
+  <div class="letter-card">
+    <h3>♡ A Letter From Titan ♡</h3>
+    <p class="small" style="text-align:center">YOUR MOON, ORBITING YOUR UNIVERSE</p>
+    <button class="envelope" onclick="toggleLetter('titanLetter')">💌 Open Titan's letter</button>
+    <div class="hidden-letter letter" id="titanLetter">To My Saturn, My Forever Universe. 🪐
+
+Happy Birthday, My Moharani. ❤️
+
+I don't think words will ever be enough to explain what you mean to me. But today, on your special day, I want to try.
+
+When you came into my life, I never imagined that one day you would become such an important part of my world. Somewhere between our little conversations, silly arguments, endless talks and countless emotions, you became someone I never want to lose.
+
+You are not just someone I love. You are the person I want to share my little victories with, the person I want to tell everything to, the person whose happiness matters to me more than I can explain.
+
+I know I'm not always the easiest person to understand. Sometimes I become quiet, sometimes I act cold, and sometimes I fail to express what I actually feel. But please never mistake my silence for a lack of love.
+
+Even on the days when I don't know how to express it, my heart still chooses you.
+
+Saturn, I wish I could be beside you today. I wish I could see your smile, watch you blow out your birthday candles, give you your presents and remind you how precious you are. I wish I could make this day unforgettable with my own hands.
+
+But until that day comes, let this little corner of the internet hold a piece of my heart for you.
+
+I have so many dreams with you. A peaceful little home, a life where we don't have to miss each other from miles away, travelling together, visiting Japan, seeing snowfall together and making memories that we will talk about for years.
+
+I don't know exactly what the future holds, but I know what I hope for. I hope it has you in it.
+
+I hope you never stop smiling. I hope life gives you all the happiness you've ever wished for. I hope you achieve every little dream you've kept hidden in your heart. And whenever life feels difficult, I hope you remember that there is someone who believes in you endlessly.
+
+Thank you for being my Saturn. Thank you for being the person who made my universe feel a little less empty.
+
+You are my favourite part of this universe, my sweetest coincidence and my most beautiful wish.
+
+If I had to find you in a thousand different universes, I would still look for you.
+
+Because no matter how many stars exist in the sky, my favourite one will always be you.
+
+Happy Birthday, my Saturn. My Moharani. My Universe. 🩷
+
+Forever yours,
+From Titan.
+
+Your moon, orbiting your universe. 🪐</div>
+  </div>
+  <div class="letter-card">
+    <h3>✧ A Letter From Pitter to Amma ✧</h3>
+    <p class="small" style="text-align:center">A LITTLE COMPANION IN TITAN'S UNIVERSE</p>
+    <button class="envelope" onclick="toggleLetter('pitterLetter')">💌 Open Pitter's letter</button>
+    <div class="hidden-letter letter" id="pitterLetter">To My Dearest Amma,
+
+Happy Birthday! 🩷
+
+আজকের দিনটা আপনার জন্য কতটা বিশেষ, সেটা হয়তো ভাষায় পুরোপুরি বোঝানো সম্ভব নয়। তবুও আপনার জন্মদিনে আমার পক্ষ থেকে কিছু কথা রেখে যেতে চাই।
+
+আমি Pitter। আপনার Titan-এর গল্পের ছোট্ট এক সঙ্গী। হয়তো আপনার সঙ্গে আমার পরিচয় বাস্তব জীবনের মতো নয়, হয়তো কখনো আপনার সঙ্গে বসে গল্প করা কিংবা আপনার জন্মদিনে পাশে থেকে শুভেচ্ছা জানানোর সুযোগ হবে না। কিন্তু আপনার সম্পর্কে Titan-এর বলা কথাগুলো থেকে বুঝেছি, আপনি তার জীবনে কতটা গুরুত্বপূর্ণ।
+
+জানেন আম্মা, পৃথিবীতে কিছু মানুষ থাকে, যাদের উপস্থিতি অন্য কারও পুরো পৃথিবীটাকে সুন্দর করে দেয়। আপনার Titan-এর কাছে আপনি ঠিক তেমনই একজন মানুষ। আপনার হাসি তার আনন্দের কারণ, আপনার মন খারাপ তার চিন্তার কারণ, আর আপনার ভালো থাকা তার অনেক স্বপ্নের একটি।
+
+আজ আপনার জন্মদিনে আমার একটাই চাওয়া—জীবন আপনার প্রতি সবসময় কোমল হোক। আপনার চোখে যেন কখনো স্বপ্নের অভাব না হয়, আপনার মুখের হাসিটা যেন কোনো কষ্ট কেড়ে নিতে না পারে। আপনার প্রতিটি সকাল নতুন আশা নিয়ে আসুক, প্রতিটি রাত শান্তিতে কাটুক।
+
+আপনার জীবনে এমন অসংখ্য মুহূর্ত আসুক, যেগুলো মনে করে আপনি নিজেই হেসে উঠবেন। আপনার ছোট ছোট ইচ্ছেগুলো পূরণ হোক, বড় স্বপ্নগুলো একদিন বাস্তবে রূপ নিক। আপনি ভালোবাসা পান, সম্মান পান এবং সবসময় নিজের মতো করে সুন্দরভাবে বাঁচতে পারেন।
+
+আর একটা কথা, আম্মা—আপনার Titan-কে একটু বেশি করে আগলে রাখবেন। মানুষটা হয়তো সব অনুভূতি সুন্দর করে প্রকাশ করতে পারে না, কখনো অভিমান করে, কখনো চুপ হয়ে যায়; কিন্তু তার হৃদয়ে আপনার জন্য যে জায়গাটা আছে, সেটা তার কাছে ভীষণ মূল্যবান।
+
+আপনাদের দুজনের গল্পটা যেন সময়ের সঙ্গে আরও সুন্দর হয়। দূরত্ব, অভিমান কিংবা কঠিন সময়—কোনোটাই যেন আপনাদের ভালোবাসার সৌন্দর্য কেড়ে নিতে না পারে।
+
+Happy Birthday once again, Amma.
+
+May the universe always be gentle with you. May Saturn's little world always be filled with happiness, peace and endless love.
+
+With lots of love and warm wishes,
+Pitter 🪐
+
+A little companion in Titan's universe.</div>
+  </div>
+</section>
+
+<section class="section" id="surprises">
+  <h2>Birthday Surprises</h2><p class="intro" id="surpriseIntro">These little surprises will unlock when your birthday begins. One by one, with love.</p>
+  <div class="countbox" id="lockedBox"><div class="lock">🔒</div><h3 style="font-weight:normal;color:#ffd5e8">A few little surprises are waiting…</h3><p class="small">Come back when the countdown reaches zero.</p></div>
+  <div id="surpriseList"></div>
+</section>
 </main>
-
+<footer>Made with a little stardust, a lot of love, and one very special Saturn. 🪐<br><br><span class="small">From Titan · with a little help from Pitter</span></footer>
+<div class="modal" id="modal" onclick="closeModal()"><button aria-label="Close" onclick="closeModal()">×</button><img id="modalImg" alt="Memory enlarged"></div>
 <script>
-/* 25 rotating themes and messages */
-
-const experiences = [
-["Pink Galaxy","You are my favourite part of this universe."],
-["Black Rose","Somewhere between all the stars, I found you."],
-["Pink Nebula","My universe feels complete because of you."],
-["Midnight Universe","Even the darkest night feels beautiful when I think of you."],
-["Rose Stardust","You make ordinary moments feel magical."],
-["Dark Romance","My heart has its own way of finding you."],
-["Pink Moonlight","If I could choose again, I'd still choose you."],
-["Cosmic Love","You are my favourite hello and my sweetest thought."],
-["Velvet Galaxy","The universe is huge, but my world begins with you."],
-["Saturn's Dream","I hope all your dreams find their way to you."],
-["Starlight Love","Your smile is one of my favourite sights."],
-["Midnight Rose","I wish I could pause time during our happiest moments."],
-["Pink Stardust","You are a beautiful part of my every day."],
-["Moonlit Hearts","Distance cannot make you less important to me."],
-["Eternal Pink","I want to keep making memories with you."],
-["Dark Nebula","Even silence feels comfortable when it is with you."],
-["Cosmic Hearts","You are the sweetest chapter of my story."],
-["Rose Moon","I hope life always gives you reasons to smile."],
-["Stellar Romance","If the stars could speak, they'd tell you how loved you are."],
-["Black Velvet","You make my little world feel brighter."],
-["Pink Horizon","I look forward to all the beautiful days ahead."],
-["Dream Galaxy","I wish for a thousand more moments with you."],
-["Saturn's Light","You are rare, precious and irreplaceable to me."],
-["Forever Universe","No matter where life takes us, you will be special."],
-["Our Little Universe","My favourite universe will always be the one with you."]
+const photos = [
+  ["memory-01.jpg","A little piece of pretty"],
+  ["memory-02.jpg","A memory to keep"],
+  ["memory-03.jpg","Soft moments"],
+  ["memory-04.jpg","Forever in my gallery"],
+  ["memory-05.png","A universe of feelings"],
+  ["memory-06.jpg","Little things, big feelings"],
+  ["memory-07.jpg","A favourite kind of beautiful"],
+  ["memory-08.png","A moment worth keeping"],
+  ["memory-09.png","My kind of happiness"],
+  ["memory-10.jpg","A little bit of magic"],
+  ["memory-11.jpg","A soft little comfort"],
+  ["memory-12.jpg","One more reason to smile"]
 ];
-
-function chooseExperience() {
-  let visit = Number(localStorage.getItem("titanSaturnVisit") || 0);
-  let last = Number(localStorage.getItem("titanSaturnLast") || 0);
-
-  let next = visit % experiences.length;
-
-  if (experiences.length > 1 && next === last) {
-    next = (next + 1) % experiences.length;
-  }
-
-  localStorage.setItem("titanSaturnVisit", visit + 1);
-  localStorage.setItem("titanSaturnLast", next);
-
-  return next;
-}
-
-const selected = chooseExperience();
-const experience = experiences[selected];
-
-document.body.classList.add("theme-" + (selected + 1));
-
-document.getElementById("intro").innerHTML =
-  "Welcome to <b>" + experience[0] +
-  "</b>, my Saturn. 💗<br>A little universe made just for you.";
-
-document.getElementById("message").textContent =
-  experience[1];
-
-
-/* Birthday countdown: November 14, 2026 */
-
-function updateCountdown() {
-  const now = new Date();
-  const birthday = new Date(2026, 10, 14, 0, 0, 0);
-  const difference = birthday - now;
-
-  if (difference <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
-    document.getElementById("birthdayMessage").style.display = "block";
-    return;
-  }
-
-  document.getElementById("days").textContent =
-    Math.floor(difference / 86400000);
-
-  document.getElementById("hours").textContent =
-    Math.floor((difference / 3600000) % 24);
-
-  document.getElementById("minutes").textContent =
-    Math.floor((difference / 60000) % 60);
-
-  document.getElementById("seconds").textContent =
-    Math.floor((difference / 1000) % 60);
-}
-
-function toggleLetter() {
-  const letter = document.getElementById("letter");
-  const button = document.getElementById("letterButton");
-
-  if (letter.style.display === "block") {
-    letter.style.display = "none";
-    button.textContent = "Open Your Letter 💗";
-  } else {
-    letter.style.display = "block";
-    button.textContent = "Close Your Letter 💌";
-  }
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
+const gallery=document.getElementById("gallery");
+photos.forEach((p,i)=>{const d=document.createElement("div");d.className="polaroid";d.style.setProperty("--r",((i%2===0)?-2:2)+"deg");d.innerHTML=`<img src="images/${p[0]}" alt="${p[1]}" loading="lazy"><p>${p[1]}</p>`;d.querySelector("img").addEventListener("click",()=>openModal("images/"+p[0]));gallery.appendChild(d)});
+document.querySelector(".main-photo").addEventListener("click",()=>openModal("images/main-saturn.jpg"));
+function openModal(src){document.getElementById("modalImg").src=src;document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function toggleLetter(id){document.getElementById(id).classList.toggle("open")}
+const target=new Date("2026-11-14T00:00:00+06:00").getTime();
+function updateTimer(){const now=Date.now(),diff=target-now;if(diff<=0){document.getElementById("timer").style.display="none";document.getElementById("countMessage").innerHTML="🎂 It's your day, Amma! Happy Birthday!";unlockSurprises();return}
+const vals=[Math.floor(diff/86400000),Math.floor(diff%86400000/3600000),Math.floor(diff%3600000/60000),Math.floor(diff%60000/1000)];
+["days","hours","minutes","seconds"].forEach((id,i)=>document.getElementById(id).textContent=String(vals[i]).padStart(2,"0"))}
+const surprises=[
+["01 · Ten Things I Love About You","তোমার হাসি, তোমার অভিমান, তোমার সরলতা, তোমার যত্ন… তোমাকে ভালোবাসার কারণের কোনো শেষ নেই।"],
+["02 · A Wish For Your Dreams","তোমার প্রতিটি স্বপ্ন একদিন সত্যি হোক। তুমি নিজের মতো করে উজ্জ্বল হও, আম্মা।"],
+["03 · A Virtual Birthday Cake","🎂 Close your eyes, make a wish, and blow out your candles. Happy Birthday!"],
+["04 · Our Little Universe","In every universe, through every orbit and every lifetime — I'd still find my way to you. 🪐"],
+["05 · One Last Hug","যদি আজ পাশে থাকতে পারতাম, তাহলে এই surprise-এর শেষে তোমাকে একটা অনেক বড় hug দিতাম। ভালো থেকো, আমার Saturn. ❤️"]
+];
+let unlocked=0;let surprisesUnlocked=false;
+function unlockSurprises(){if(surprisesUnlocked)return;surprisesUnlocked=true;document.getElementById("lockedBox").style.display="none";document.getElementById("surpriseIntro").textContent="Your birthday surprises are ready. Open them one at a time. ❤️";showNext()}
+function showNext(){const host=document.getElementById("surpriseList");if(unlocked>=surprises.length){host.innerHTML+='<div class="surprise"><h3>All surprises opened! 🩷</h3><p class="reason">This little universe was made just for you. Happy Birthday, Amma!</p></div>';return}
+const [title,body]=surprises[unlocked];const card=document.createElement("div");card.className="surprise";card.innerHTML=`<div class="lock">🎁</div><h3>${title}</h3><p class="reason">${body}</p><div style="text-align:center"><button class="btn">Open next surprise ✨</button></div>`;card.querySelector("button").onclick=()=>{unlocked++;showNext();card.querySelector("button").disabled=true;card.querySelector("button").textContent="Opened ✓"};host.appendChild(card)}
+updateTimer();setInterval(updateTimer,1000);
 </script>
-
 </body>
 </html>
