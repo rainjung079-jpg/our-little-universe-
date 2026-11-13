@@ -3,247 +3,481 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>To My Saturn ♡</title>
+<title>To My Saturn — From Titan ♡</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
 *{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--pink:#ff8fc7;
+--light:#ffd8eb;
+--deep:#160b17;
+--gold:#d9b5c5;
+}
+
+html{scroll-behavior:smooth}
+
 body{
 background:#080609;
-color:#fff;
-font-family:Georgia,serif;
+color:#fff0f7;
+font-family:'Cormorant Garamond',serif;
 overflow-x:hidden;
 }
-:root{--pink:#ff8fc8;--soft:#ffd1e8}
-section{padding:65px 20px;text-align:center}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:5;
+opacity:.13;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+}
+
+.stars{
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(1px 1px at 20% 30%,#fff 99%,transparent),
+radial-gradient(2px 2px at 70% 20%,#ffb9dd 99%,transparent),
+radial-gradient(1px 1px at 40% 80%,#fff 99%,transparent),
+radial-gradient(1px 1px at 85% 65%,#fff 99%,transparent);
+background-size:180px 180px;
+opacity:.45;
+}
+
 .hero{
 min-height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
-background:radial-gradient(circle,#35152d,#080609 65%);
-}
-.planet{
-width:170px;height:170px;border-radius:50%;
-background:radial-gradient(circle at 35% 30%,#ffd6e9,#b65d91 45%,#361326 80%);
-box-shadow:0 0 60px #ed80bd66;
+justify-content:center;
+text-align:center;
+padding:35px 20px;
+background:radial-gradient(ellipse at center,#39172f 0%,#160b19 42%,#080609 78%);
 position:relative;
-margin-bottom:35px;
 }
-.planet:after{
-content:"";position:absolute;
-width:260px;height:75px;
-border:12px solid #e8a1ca;
+
+.eyebrow{
+font-size:12px;
+letter-spacing:5px;
+color:var(--gold);
+text-transform:uppercase;
+}
+
+.planet{
+width:155px;
+height:155px;
 border-radius:50%;
-left:-45px;top:48px;
-transform:rotate(-20deg);
-opacity:.7;
+margin:55px 0 35px;
+position:relative;
+background:
+radial-gradient(circle at 30% 25%,#ffe0ee 0%,#d58bae 25%,#98516f 55%,#301426 90%);
+box-shadow:0 0 50px #ff8fc755,0 0 110px #a3448055;
+animation:float 5s ease-in-out infinite;
 }
-h1{font-size:clamp(35px,9vw,65px);color:var(--soft);margin:15px}
-h2{color:var(--pink);font-size:30px;margin-bottom:22px}
-p{line-height:1.9;color:#e8dce5;font-size:16px}
-.small{color:#d9a9c5;letter-spacing:3px;font-size:12px}
-button{
-background:linear-gradient(135deg,#ffafd8,#c65391);
-color:#210d1a;border:0;padding:14px 25px;
-border-radius:30px;font-weight:bold;
-margin:15px 5px;cursor:pointer;
+
+.planet:before{
+content:"";
+position:absolute;
+width:245px;
+height:65px;
+border:10px solid #e9b4d0;
+border-left-color:#9b5d82;
+border-right-color:#f6cde1;
+border-radius:50%;
+top:44px;
+left:-45px;
+transform:rotate(-24deg);
+box-shadow:0 0 20px #ffacd866;
 }
-.card{
-max-width:650px;margin:22px auto;
-padding:28px 22px;
-border:1px solid #a94c80;
-border-radius:18px;
-background:#1a101a;
-box-shadow:0 0 25px #d45b9920;
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
 }
-.letter{display:none;text-align:left;white-space:pre-line}
-.gallery{
-display:grid;grid-template-columns:repeat(2,1fr);
-gap:12px;max-width:700px;margin:auto;
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:clamp(45px,12vw,76px);
+font-weight:500;
+color:var(--light);
+text-shadow:0 0 30px #ff8fc755;
 }
-.gallery img{
-width:100%;height:210px;object-fit:cover;
-border-radius:13px;border:1px solid #9d4d78;
+
+.hero .subtitle{
+font-size:21px;
+margin-top:14px;
+color:#e8c4d8;
+font-style:italic;
+}
+
+.hero .date{
+margin-top:35px;
+font-size:12px;
+letter-spacing:4px;
+color:var(--gold);
+}
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 30px;
+border:1px solid var(--pink);
+border-radius:40px;
+background:linear-gradient(120deg,#ffafd8,#c65b94);
+color:#220d1b;
+font-family:inherit;
+font-size:17px;
+font-weight:bold;
+text-decoration:none;
+cursor:pointer;
+box-shadow:0 0 25px #ff8fc733;
+transition:.3s;
+}
+
+.btn:hover{transform:scale(1.05);box-shadow:0 0 35px #ff8fc777}
+
+section{
+position:relative;
+padding:85px 20px;
+text-align:center;
+}
+
+.section-label{
+font-size:12px;
+letter-spacing:4px;
+color:var(--gold);
+text-transform:uppercase;
+margin-bottom:15px;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(30px,7vw,45px);
+font-weight:500;
+color:var(--pink);
+margin-bottom:20px;
+}
+
+.intro{
+max-width:650px;
+margin:auto;
+font-size:21px;
+line-height:1.8;
+color:#ead8e3;
+}
+
+.countdown-card{
+max-width:550px;
+margin:40px auto 0;
+padding:30px 20px;
+border:1px solid #a65380;
+border-radius:20px;
+background:linear-gradient(145deg,#241321,#100b12);
+box-shadow:0 0 35px #e76ca522;
+}
+
+.countdown{
+font-family:'Playfair Display',serif;
+font-size:clamp(30px,8vw,48px);
+color:var(--light);
+margin:15px 0;
+}
+
+.divider{
+width:90px;
+height:1px;
+background:linear-gradient(90deg,transparent,var(--pink),transparent);
+margin:35px auto;
 }
 </style>
 </head>
 
 <body>
+<div class="stars"></div>
 
 <section class="hero">
-<div class="small">A LITTLE UNIVERSE MADE FOR YOU</div>
+<div class="eyebrow">A universe made only for you</div>
+
 <div class="planet"></div>
-<h1>My Saturn ♡</h1>
-<p>Somewhere between a thousand stars,<br>
-I found my favourite universe.</p>
-<p class="small">14 NOVEMBER · YOUR SPECIAL DAY</p>
-<button onclick="document.getElementById('welcome').scrollIntoView({behavior:'smooth'})">
-ENTER OUR UNIVERSE
-</button>
+
+<h1>My Saturn</h1>
+
+<p class="subtitle">My favourite girl in this endless universe.</p>
+
+<div class="date">14 NOVEMBER · YOUR DAY</div>
+
+<a class="btn" href="#begin">ENTER OUR UNIVERSE ♡</a>
 </section>
 
-<section id="welcome">
-<h2>Happy Birthday, Amma ♡</h2>
-<p>
-Welcome to a little world made with love,<br>
-just for the girl who means everything to me.
+<section id="begin">
+<div class="section-label">A little something from Titan</div>
+<h2 class="section-title">For the girl who has my heart</h2>
+
+<p class="intro">
+Among billions of people, countless stars and endless galaxies,
+somehow my universe found its favourite person.
+And that person is you, Saturn.
 </p>
-<div class="card">
-<div class="small">A COUNTDOWN TO YOUR DAY</div>
-<h1 id="countdown">00:00:00</h1>
-<p>Every second brings me closer to celebrating you.</p>
-</div>
-</section>
-<section>
-<h2>A Letter From Titan</h2>
-<div class="card">
-<p>
-To my dearest Amma,
 
-I don't think words will ever be enough to explain how much you mean to me.
+<div class="divider"></div>
 
-You came into my life and slowly became someone I never want to lose. Your smile, your little tantrums, your anger, your love — every little thing about you is special to me.
-
-Maybe I am not always good at expressing my feelings. Sometimes I act cold, sometimes I fail to say what is in my heart. But please remember, behind all of that is someone who loves you more than words can explain.
-
-I wish to build a peaceful little world with you. A home filled with laughter, love and endless memories. One day, I want to take your hand and travel to Japan with you, watch the snowfall together and make all those little dreams come true.
-
-Happy Birthday, my beautiful girl.
-
-You will always be my favourite person, my malkin, my Saturn.
-
-Forever yours,
-Titan ♡
+<div class="countdown-card">
+<div class="section-label">Until your special day</div>
+<div class="countdown" id="countdown">Loading...</div>
+<p class="intro" style="font-size:17px">
+Every second is a little closer to celebrating you.
 </p>
 </div>
 </section>
+  <section>
+<div class="section-label">A letter from your Titan</div>
+<h2 class="section-title">If only words could hold my love</h2>
+
+<div class="countdown-card" style="text-align:left;padding:30px">
+<p style="font-size:20px;line-height:1.9">
+To my dearest Saturn,
+
+<br><br>
+
+Happy Birthday, my love. ♡
+
+<br><br>
+
+I wish I could be beside you right now, holding your hands, looking into your eyes and telling you how precious you are to me.
+
+<br><br>
+
+Sometimes I wonder how one person can become such a huge part of another person's universe. Then I think about you, and suddenly I understand everything.
+
+<br><br>
+
+You are in my smallest thoughts, in my random smiles, in the dreams I make for tomorrow. Even when I don't express it properly, even when I become quiet or act like I don't care, my heart never stops choosing you.
+
+<br><br>
+
+I don't promise that every day will be perfect. But I want to keep learning how to love you better, understand you deeper and make you feel special in all the little ways.
+
+<br><br>
+
+I dream of a beautiful future with you. A peaceful home, our own little world, financial freedom, countless adventures and a trip to Japan where we can finally stand together and watch the snow falling.
+
+<br><br>
+
+I want to collect ordinary days with you until they become extraordinary memories.
+
+<br><br>
+
+Please never doubt how special you are to me. You are not just someone I love. You are the person I want beside me when all my dreams come true.
+
+<br><br>
+
+Happy Birthday, my queen.
+
+<br><br>
+
+I love you, Saturn. More than I can ever explain.
+
+<br><br>
+
+Forever yours,<br>
+<strong style="color:#ff9fcf">Your Titan ♡</strong>
+</p>
+</div>
+</section>
 
 <section>
-<h2>A Little Letter From Pitter</h2>
-<div class="card">
-<p>
+<div class="section-label">A little message from Pitter</div>
+<h2 class="section-title">A wish for you, Saturn</h2>
+
+<div class="countdown-card">
+<p style="font-size:21px;line-height:1.9;text-align:left">
 Dear Saturn,
 
-You may not know me, but I know how much you mean to someone who calls herself Titan.
+<br><br>
 
-She wanted to create something special for you. Not just a website, but a tiny universe filled with her love, her wishes and all the words she sometimes cannot say.
+Today is all about you. I hope this new chapter brings you endless happiness, beautiful opportunities, good health, success and peace.
 
-I hope your new year is filled with happiness, peace, success and countless reasons to smile.
+<br><br>
 
-Keep smiling, keep shining and never forget that you are deeply loved.
+May you always have reasons to smile, courage to chase your dreams and people who make you feel loved.
 
-Happy Birthday, Amma! ♡
+<br><br>
 
-With love,
-Pitter 🪐
+Someone out there has made an entire little universe just to celebrate you. And I hope you can feel every bit of love hidden in it.
+
+<br><br>
+
+Keep shining, beautiful girl. The world is brighter with you in it.
+
+<br><br>
+
+<strong style="color:#ff9fcf">With lots of love,<br>Pitter 🪐</strong>
 </p>
 </div>
 </section>
 
 <section>
-<h2>Our Little Memories</h2>
-<p>Every picture holds a little piece of this universe.</p>
-<div class="gallery">
-<img src="main-saturn.jpg" alt="Saturn">
-<img src="memory-01.jpg" alt="Memory 1">
-<img src="memory-02.jpg" alt="Memory 2">
-<img src="memory-04.jpg" alt="Memory 4">
-<img src="memory-06.jpg" alt="Memory 6">
-<img src="memory-08.png" alt="Memory 8">
-<img src="memory-09.jpg" alt="Memory 9">
-<img src="memory-10.jpg" alt="Memory 10">
-<img src="memory-11.jpg" alt="Memory 11">
-<img src="memory-12.jpg" alt="Memory 12">
+<div class="section-label">Little pieces of our universe</div>
+<h2 class="section-title">Our Memory Gallery</h2>
+<p class="intro" style="font-size:18px">
+Some moments deserve to be kept forever.
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:750px;margin:35px auto">
+
+<div><img src="main-saturn.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>My favourite girl ♡</p></div>
+
+<div><img src="memory-01.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>A little memory</p></div>
+
+<div><img src="memory-02.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>One of my favourites</p></div>
+
+<div><img src="memory-04.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>Beautiful you</p></div>
+
+<div><img src="memory-06.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>Forever in my heart</p></div>
+
+<div><img src="memory-08.png" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>Our little universe</p></div>
+
+<div><img src="memory-09.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>Another favourite</p></div>
+
+<div><img src="memory-10.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>My Saturn</p></div>
+
+<div><img src="memory-11.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>Always special</p></div>
+
+<div><img src="memory-12.jpg" style="width:100%;height:230px;object-fit:cover;border-radius:15px;border:1px solid #bd6895"><p>My universe ♡</p></div>
+
 </div>
 </section>
-<section>
-<h2>Make a Wish, Amma ✨</h2>
-<div class="card">
-<div style="font-size:65px">🎂</div>
-<p>Close your eyes, make a wish and tap the button.</p>
-<button onclick="alert('May every beautiful wish of yours come true! Happy Birthday, Amma! ❤️')">
-MAKE A WISH
+  <section>
+<div class="section-label">A birthday wish</div>
+<h2 class="section-title">Make a Wish, My Love</h2>
+
+<div class="countdown-card">
+<div style="font-size:90px">🎂</div>
+<p class="intro" style="font-size:19px">
+Close your eyes, make a beautiful wish and let the universe hear it.
+</p>
+<button class="btn" onclick="alert('May every beautiful wish of yours come true. Happy Birthday, my Saturn! ♡')">
+MAKE A WISH ♡
 </button>
 </div>
 </section>
 
 <section>
-<h2>Our Little Promises</h2>
-<div class="card">
-<p>
-♡ One day, Japan together.<br><br>
-♡ Watching snowfall hand in hand.<br><br>
-♡ A peaceful home filled with love.<br><br>
-♡ Choosing each other, every single day.<br><br>
-♡ Making memories that last forever.
+<div class="section-label">A future I dream of</div>
+<h2 class="section-title">Someday, You & Me</h2>
+
+<div class="countdown-card">
+<div style="font-size:75px">🇯🇵</div>
+<h2 style="font-size:30px">Japan, With You</h2>
+<p class="intro" style="font-size:19px">
+One day, we will walk through the streets of Japan together,
+hold hands under the winter sky and watch the snow falling.
+<br><br>
+No distance. No screens. Just you and me.
+</p>
+<div class="divider"></div>
+<div style="font-size:65px">🏡</div>
+<h2 style="font-size:27px">Our Little Home</h2>
+<p class="intro" style="font-size:19px">
+A peaceful home, warm hugs, silly arguments,
+endless laughter and a lifetime of choosing each other.
 </p>
 </div>
 </section>
 
 <section>
-<h2>Six Little Surprises</h2>
-<p>Tap each one to open a little message.</p>
+<div class="section-label">Six secrets, just for you</div>
+<h2 class="section-title">Open Your Surprises</h2>
+<p class="intro" style="font-size:18px">
+Every little box has something I want you to know.
+</p>
 
-<div class="card">
-<button onclick="reveal(0)">Surprise 01 ♡</button>
-<button onclick="reveal(1)">Surprise 02 ♡</button>
-<button onclick="reveal(2)">Surprise 03 ♡</button>
-<button onclick="reveal(3)">Surprise 04 ♡</button>
-<button onclick="reveal(4)">Surprise 05 ♡</button>
-<button onclick="reveal(5)">Surprise 06 ♡</button>
-<h2 id="surprise" style="font-size:20px;margin-top:25px"></h2>
+<div class="countdown-card">
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+
+<button class="btn" onclick="surprise(0)">♡ Secret 01</button>
+<button class="btn" onclick="surprise(1)">♡ Secret 02</button>
+<button class="btn" onclick="surprise(2)">♡ Secret 03</button>
+<button class="btn" onclick="surprise(3)">♡ Secret 04</button>
+<button class="btn" onclick="surprise(4)">♡ Secret 05</button>
+<button class="btn" onclick="surprise(5)">♡ Secret 06</button>
+
+</div>
+<div id="secret-message" style="margin-top:30px;font-size:22px;color:#ffc0df;line-height:1.7">
+Choose a little surprise ♡
+</div>
 </div>
 </section>
 
 <section>
-<div class="planet" style="margin:20px auto"></div>
-<h1>You're My Universe</h1>
-<p>
-No matter how many stars exist,<br>
-you will always be my favourite one.
+<div class="planet"></div>
+<div class="section-label">To infinity and beyond</div>
+<h1 style="font-family:'Playfair Display',serif;color:#ffd8eb;font-size:clamp(40px,10vw,65px)">
+You're My Universe
+</h1>
+
+<p class="intro" style="margin-top:25px">
+The universe is enormous, but my favourite place will always be wherever you are.
 </p>
-<p style="color:#ff9dcc;margin-top:30px">
-Happiest Birthday, My Saturn ♡
+
+<div class="divider"></div>
+
+<h2 class="section-title">Happiest Birthday, Saturn ♡</h2>
+
+<p class="intro" style="font-size:20px">
+With all the love I have,<br>
+from your Titan.
 </p>
-<p class="small">MADE WITH LOVE BY TITAN</p>
+
+<p style="margin-top:45px;color:#dba6c6;letter-spacing:4px;font-size:12px">
+MADE WITH LOVE · 14 NOVEMBER 2026
+</p>
 </section>
+
+<footer style="text-align:center;padding:30px;color:#9e7890;font-size:14px">
+A little universe, made only for you. 🪐
+</footer>
 
 <script>
 const birthday = new Date("2026-11-14T00:00:00+06:00").getTime();
 
 function updateCountdown(){
 const now = Date.now();
-let distance = birthday-now;
+const distance = birthday - now;
+const el = document.getElementById("countdown");
 
-if(distance<=0){
-document.getElementById("countdown").innerText="HAPPY BIRTHDAY! ♡";
+if(distance <= 0){
+el.innerText = "HAPPY BIRTHDAY ♡";
 return;
 }
 
-let days=Math.floor(distance/(1000*60*60*24));
-let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-let minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-let seconds=Math.floor((distance%(1000*60))/1000);
+const days = Math.floor(distance / 86400000);
+const hours = Math.floor((distance % 86400000) / 3600000);
+const minutes = Math.floor((distance % 3600000) / 60000);
+const seconds = Math.floor((distance % 60000) / 1000);
 
-document.getElementById("countdown").innerText=
-days+"d "+hours+"h "+minutes+"m "+seconds+"s";
+el.innerText = days+"d "+hours+"h "+minutes+"m "+seconds+"s";
 }
 
-setInterval(updateCountdown,1000);
 updateCountdown();
+setInterval(updateCountdown,1000);
 
-const messages=[
-"You are my favourite hello and my hardest goodbye. ♡",
-"Even on difficult days, I will keep choosing you.",
-"You deserve every beautiful thing this world can offer.",
-"One day, let's watch the snow fall together in Japan.",
-"Your happiness will always matter to me.",
-"Thank you for being my Saturn. I love you. ♡"
+const messages = [
+"You are my favourite person in this entire universe. ♡",
+"I hope I get to see your smile every single day.",
+"You deserve a love that makes you feel safe and special.",
+"One day, we will watch the snowfall in Japan together.",
+"No matter how many stars exist, you will always be my favourite.",
+"I would choose you in every lifetime, my Saturn. ♡"
 ];
 
-function reveal(number){
-document.getElementById("surprise").innerText=messages[number];
+function surprise(number){
+document.getElementById("secret-message").innerText = messages[number];
 }
 </script>
 
